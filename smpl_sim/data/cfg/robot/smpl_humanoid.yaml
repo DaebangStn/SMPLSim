@@ -14,5 +14,5 @@ real_weight_porpotion_capsules: True
 real_weight_porpotion_boxes: True
 real_weight: True
 box_body: True
-smpl_data_dir: data/smpl
+smpl_data_dir: smpl
 create_vel_sensors: False
