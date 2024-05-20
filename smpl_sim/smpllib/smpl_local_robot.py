@@ -1334,7 +1334,7 @@ class SMPL_Robot:
             if self.upright_start:
                 zero_pose[0, :3] = torch.tensor([1.2091996, 1.2091996, 1.2091996])
 
-            if self.smpl_model == 'smpl':
+            if self.smpl_model in ['smpl', 'smplh'] :
                 (verts, joints, skin_weights, joint_names, joint_offsets, joint_parents, joint_axes, joint_dofs,
                  joint_range, contype, conaffinity) = smpl_parser.get_mesh_offsets(
                     zero_pose=zero_pose, betas=self.beta, flatfoot=self.flatfoot)
@@ -1411,7 +1411,7 @@ class SMPL_Robot:
                 zero_pose[0, :3] = torch.tensor(
                     [1.2091996, 1.2091996, 1.2091996])
 
-            if self.smpl_model == "smpl":
+            if self.smpl_model in ['smpl', 'smplh']:
                 verts, joints, skin_weights, joint_names, joint_offsets, parents_dict, channels, joint_range = (
                     smpl_parser.get_offsets(betas=self.beta, zero_pose=zero_pose))
             else:
